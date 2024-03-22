@@ -38,5 +38,16 @@ post '/visit' do
 	end
 end
 
+get '/barber/:id' do
+	@barber = Barber.find(params[:id])
+	erb :barber
+end
 
+get '/bookings' do
+	@clients = Client.all
+	erb :bookings
+end
 
+get '/client/:id' do
+	@client = Client.find(params[:id])
+end
